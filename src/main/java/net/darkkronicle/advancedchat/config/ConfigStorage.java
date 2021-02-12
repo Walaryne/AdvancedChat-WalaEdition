@@ -13,12 +13,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.*/
 
 package net.darkkronicle.advancedchat.config;
 
-import lombok.Getter;
 import net.darkkronicle.advancedchat.storage.ChatTab;
 import net.darkkronicle.advancedchat.storage.Filter;
 import net.darkkronicle.advancedchat.util.ColorUtil;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 
 import java.util.ArrayList;
 
@@ -45,12 +42,14 @@ public class ConfigStorage {
     public ChatConfig chatConfig = new ChatConfig();
     public static class ChatConfig {
         public int height = 171;
-        public int width =  280;
+        public int width = 280;
         public int lineSpace = 9;
         public int yOffset = 30;
         public int xOffset = 0;
         public int storedLines = 200;
         public float chatscale = 1;
+        public double wrapMultiplier = 280.0D;
+
 
         public ColorUtil.SimpleColor hudBackground = ColorUtil.BLACK.withAlpha(100);
         public ColorUtil.SimpleColor emptyText = ColorUtil.WHITE;

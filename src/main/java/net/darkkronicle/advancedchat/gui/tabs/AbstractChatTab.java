@@ -58,7 +58,7 @@ public abstract class AbstractChatTab {
     /**
      * If the inputted message should be put into the chat tab.
      *
-     * @param Text Object to search.
+     * @param text Object to search.
      * @return True if it should be added.
      */
     public abstract boolean shouldAdd(Text text);
@@ -79,7 +79,7 @@ public abstract class AbstractChatTab {
     /**
      * Used for adding messages into the tab.
      *
-     * @param Text      Text to add.
+     * @param text      Text to add.
      * @param messageId ID of message.
      * @param timestamp Amount of ticks when it was created.
      * @param bl        Add to messages
@@ -122,7 +122,7 @@ public abstract class AbstractChatTab {
         }
 
         // To Prevent small letters from being stuck right next to the tab border we subtract 5 here.
-        int width = MathHelper.floor(client.options.chatWidth * 280.0D - 5 );
+        int width = MathHelper.floor(client.options.chatWidth * AdvancedChat.configStorage.chatConfig.wrapMultiplier - 5);
 
         for (OrderedText breakRenderedChatMessageLine : ChatMessages.breakRenderedChatMessageLines(text, width, client.textRenderer)) {
             MutableText newLine = new LiteralText("");

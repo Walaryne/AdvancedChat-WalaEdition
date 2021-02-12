@@ -223,6 +223,10 @@ public class ModMenuImpl implements ModMenuApi {
 
         chathud.addEntry(entry.startIntSlider(new TranslatableText("config.advancedchat.chatscale"), (int) (AdvancedChat.configStorage.chatConfig.chatscale * (float) 100), 20, 100).setTooltip(new TranslatableText("config.advancedchat.info.chatscale")).setSaveConsumer(val -> AdvancedChat.configStorage.chatConfig.chatscale = (float) val / 100).build());
 
+        chathud.addEntry(entry.startDoubleField(new TranslatableText("config.advancedchat.wrapmultiplier"), AdvancedChat.configStorage.chatConfig.wrapMultiplier).setMin(0).setMax(1600).setSaveConsumer(val -> {
+            AdvancedChat.configStorage.chatConfig.wrapMultiplier = val;
+        }).build());
+
         ConfigCategory chatlog = builder.getOrCreateCategory(new TranslatableText("config.advancedchat.category.chatlog"));
 
         chatlog.addEntry(entry.startBooleanToggle(new TranslatableText("config.advancedchat.chatlog.showtime"), AdvancedChat.configStorage.chatLogConfig.showTime).setTooltip(new TranslatableText("config.advancedchat.chatlog.info.showtime")).setSaveConsumer(newval -> {

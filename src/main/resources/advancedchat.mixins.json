@@ -8,6 +8,7 @@
   "client": [
     "MixinChatHud",
     "MixinChatScreen",
+    "MixinClientPlayerEntity",
     "MixinInGameHud",
     "MixinKeyboard",
     "MixinMinecraftClient"

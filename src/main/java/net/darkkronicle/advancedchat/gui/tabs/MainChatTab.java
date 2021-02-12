@@ -29,7 +29,6 @@ import net.minecraft.util.math.MathHelper;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -133,7 +132,7 @@ public class MainChatTab extends AbstractChatTab {
         }
 
         // To Prevent small letters from being stuck right next to the tab border we subtract 5 here.
-        int width = MathHelper.floor(client.options.chatWidth * 280.0D - 5 );
+        int width = MathHelper.floor(client.options.chatWidth * AdvancedChat.configStorage.chatConfig.wrapMultiplier - 5);
 
         for (OrderedText breakRenderedChatMessageLine : ChatMessages.breakRenderedChatMessageLines(text, width, client.textRenderer)) {
             MutableText newLine = new LiteralText("");

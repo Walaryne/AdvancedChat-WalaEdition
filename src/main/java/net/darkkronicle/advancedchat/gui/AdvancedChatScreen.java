@@ -17,7 +17,6 @@ import net.darkkronicle.advancedchat.AdvancedChat;
 import net.darkkronicle.advancedchat.config.ModMenuImpl;
 import net.darkkronicle.advancedchat.gui.elements.CleanButton;
 import net.darkkronicle.advancedchat.gui.tabs.AbstractChatTab;
-import net.darkkronicle.advancedchat.gui.tabs.CustomChatTab;
 import net.darkkronicle.advancedchat.util.ColorUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.CommandSuggestor;
@@ -41,13 +40,6 @@ public class AdvancedChatScreen extends Screen {
     public AdvancedChatScreen(String originalChatText) {
         super(NarratorManager.EMPTY);
         this.originalChatText = originalChatText;
-        if (this.originalChatText.isEmpty()) {
-            AbstractChatTab tab = AdvancedChat.getAdvancedChatHud().getCurrentTab();
-            if (tab instanceof CustomChatTab) {
-                CustomChatTab customTab = (CustomChatTab) tab;
-                this.originalChatText = customTab.getStartingMessage();
-            }
-        }
     }
 
     protected void init() {
